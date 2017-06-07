@@ -37,20 +37,30 @@ table {
 *{
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'liberation_sansregular';
+  src: url('font/LiberationSans-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background-color: #242424;
-}
-#app{
   height: 100vh;
+  overflow: hidden;
+  font-family: 'Liberation_sansregular';
+}
+
+#app{
   position: relative;
   .bg-left {
-    background: url("../src/img/bg-left.png") no-repeat;
-    width: 824px;
-    height: 621px;
+    background: url("img/bg-left.png") no-repeat;
+    width: 900px;
+    height: 700px;
+    background-size: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-animation: scale 5s;
+    z-index: -1;
     animation: scale 5s;
     @keyframes scale {
       from {
@@ -62,12 +72,13 @@ body {
     }
   }
   .bg-right {
-    background: url("../src/img/bg-right.png") no-repeat;
+    background: url("img/bg-right.png") no-repeat;
     width: 994px;
     height: 271px;
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: -1;
     animation: move-left 5s;
     @keyframes move-left  {
       0% {
@@ -81,16 +92,83 @@ body {
     }
   }
 }
+.container{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  #main-content {
+    align-self: center;
+    width: 65%;
+    h1{
+      color: #FFFFFF;
+      font-size: 45px;
+      text-align: right;
+      padding: 0 125px 50px 0;
+      letter-spacing: 1px;
+    }
+    .boxes {
+      height: 65vh;
+      display: flex;
+    }
+  }
+}
+.box--left {
+  width: 40%;
+  background: url("./img/box-left.png")  bottom center/cover no-repeat;
+  height: 100%;
+  position: relative;
+  .lines{
+    background-color: rgba(26, 26, 26, 0.85);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    svg {
+      height: 100%;
+      width: 100%;
+      stroke-width: 2;
+      line{
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: slide 2s forwards;
+        -ms-animation: slide 2s forwards;
+        @keyframes slide {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.green {
+  stroke: #1CD4A3;
+}
+.purple {
+  stroke: #531FC0;
+}
+.white {
+  stroke: #FFFFFF;
+}
+.box--right {
+  width: 60%;
+  height: 100%;
+  background-color: #F9F9FB;
+}
 
 
 
-/*.radioBtn {
+.radioBtn {
   width: 44px;
   height: 44px;
   position: relative;
   margin: 20px auto;
   background: #fff;
   border: 2px solid #DDDDE2;
+  .male{
+    background: url("./img/male.png");
+  }
   &:checked{
   border: 2px solid #1CD4A3;
   }
@@ -126,4 +204,4 @@ body {
       border: 2px solid #1CD4A3;
     }
   }
-}*/
+}
