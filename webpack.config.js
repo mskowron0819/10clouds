@@ -21,7 +21,12 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: "file-loader?name=src/img/[name].[ext]"
-            }
+            },
+            {
+                test: /\.woff$/,
+                loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=src/font/[name].[ext]'
+            },
+
         ]
     }
 };
