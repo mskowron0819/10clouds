@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>10CLOUDS</title>
 </head>
 <body>
@@ -14,44 +13,88 @@
         <div id="main-content">
             <h1>Your account</h1>
             <div class="boxes">
-                <div class="box--left">
+                <div class="box-left">
+                    <div class="box-left--animate">
                     <div class="lines">
                     <svg>
-                        <line x1="20" y1="60" x2="98" y2="60" class="green"></line>
-                        <line x1="20" y1="85" x2="188" y2="85" class="purple"></line>
-                        <line x1="60" y1="110" x2="158" y2="110" class="white"></line>
-                        <line x1="59" y1="135" x2="137" y2="135" class="green"></line>
-                        <line x1="20" y1="160" x2="178" y2="160" class="white"></line>
-                        <line x1="90" y1="185" x2="265" y2="185" class="green"></line>
-                        <line x1="90" y1="210" x2="258" y2="210" class="purple"></line>
-                        <line x1="60" y1="235" x2="148" y2="235" class="white"></line>
-                        <line x1="90" y1="260" x2="218" y2="260" class="purple"></line>
-                        <line x1="20" y1="285" x2="255" y2="285" class="white"></line>
-                        <line x1="60" y1="310" x2="205" y2="310" class="green"></line>
-                        <line x1="90" y1="335" x2="168" y2="335" class="purple"></line>
-                        <line x1="90" y1="360" x2="208" y2="360" class="white"></line>
-                        <line x1="60" y1="385" x2="235" y2="385" class="green"></line>
-                        <line x1="90" y1="410" x2="108" y2="410" class="purple"></line>
-                        <line x1="90" y1="435" x2="168" y2="435" class="white"></line>
-                        <line x1="120" y1="460" x2="255" y2="460" class="green"></line>
-                        <line x1="120" y1="485" x2="289" y2="485" class="purple"></line>
+                        <line x1="5%" y1="12%" x2="27%" y2="12%" class="green"></line>
+                        <line x1="5%" y1="16%" x2="52%" y2="16%" class="purple"></line>
+                        <line x1="15%" y1="20%" x2="45%" y2="20%" class="white"></line>
+                        <line x1="15%" y1="24%" x2="41%" y2="24%" class="green"></line>
+                        <line x1="5%" y1="28%" x2="55%" y2="28%" class="white"></line>
+                        <line x1="25%" y1="32%" x2="86%" y2="32%" class="green"></line>
+                        <line x1="25%" y1="36%" x2="83%" y2="36%" class="purple"></line>
+                        <line x1="15%" y1="40%" x2="45%" y2="40%" class="white"></line>
+                        <line x1="25%" y1="44%" x2="70%" y2="44%" class="purple"></line>
+                        <line x1="5%" y1="48%" x2="80%" y2="48%" class="white"></line>
+                        <line x1="15%" y1=52% x2="65%" y2="52%" class="green"></line>
+                        <line x1="25%" y1="56%" x2="55%" y2="56%" class="purple"></line>
+                        <line x1="25%" y1="60%" x2="74%" y2="60%" class="white"></line>
+                        <line x1="15%" y1="64%" x2="79%" y2="64%" class="green"></line>
+                        <line x1="25%" y1="68%" x2="30%" y2="68%" class="purple"></line>
+                        <line x1="25%" y1="72%" x2="55%" y2="72%" class="white"></line>
+                        <line x1="35%" y1="76%" x2="81%" y2="76%" class="green"></line>
+                        <line x1="35%" y1="80%" x2="90%" y2="80%" class="purple"></line>
                     </svg>
                     </div>
+                    </div>
                 </div>
-                <div class="box--right">
-                    <fieldset>
-                        <legend>Gender</legend>
-                        <div class="radioBtn male">
-                            <input type="radio" value="male" id="male" name="gender"/>
-      <label for="male"></label>
-                        </div>
-                        <div class="radioBtn female">
-                            <input type="radio" value="female" id="female" name="gender"/>
-                            <label for="female"></label>
-                        </div>
-                    </fieldset>
+                <div class="box-right">
+                    <div class="box-right--animate">
+                    <h2>Take it all with you. Switch between devices,</br> and pick up. </h2 >
+                    <form action='' method='post' id='user-data'>
+                        <label class="label--style">Your name</br>
+                            <input type='text' value='' name='name' id="name" required>
+                        </label>
+                        <fieldset>
+                            <legend class="label--style arrow">Mobile</legend>
+                            <select name='code' aria-label="country code" id="code">
+                                <option value='48'>+48 (PL)</option>
+                                <option value='49'>+49 (GB)</option>
+                                <option value='31'>+31 (FR)</option>
+                                <option value='31'>+31 (IT)</option>
+                            </select>
+                            <label aria-label="telephone number">
+                                <input type='tel' id='phone' name='mobile' class='mobile' value='' minlength='9' maxlength='11' required placeholder="123 456 789">
+                            </label>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="label--style">Gender</legend>
+                            <div class="radioBtn male">
+                                <input type="radio" value="male" id="male" name="gender"/>
+                                <label for="male" aria-label="Male"></label>
+                            </div>
+                            <div class="radioBtn female">
+                                <input type="radio" value="female" id="female" name="gender"/>
+                                <label for="female" aria-label="Female"></label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="birth-form">
+                            <legend class="label--style">Date of birth</legend>
+                            <label aria-label="day of birth">
+                                <input type='number' name='day' min='1' max='31' value='' id='day' required placeholder="DD">
+                            </label>
+                            <select class='month' name='month' id='month' aria-label="month of birth" required>
+                                <option value='' disabled selected></option>
+                            </select>
+                            <label aria-label="year of birth">
+                                <input type='number' name='year' min='1940' max='2017' value='' id='year' required placeholder="YYYY">
+                            </label>
+                        </fieldset>
+                    </form>
+                    </div>
                 </div>
-            </div>
+                </div>
+            <button type='submit' name='submit' form="user-data" id='submit-btn'>CONTINUE
+                <span id="btn-arrow"><svg width="50" height="50">
+                        <line x1="17" y1="25" x2="34" y2="25" style="stroke:#ffffff;"></line>
+                        <line x1="34" y1="25" x2="30" y2="21" style="stroke:#ffffff;"></line>
+                        <line x1="34" y1="25" x2="30" y2="29" style="stroke:#ffffff;"></line>
+                    </svg></span>
+            </button>
+
+        </div>
+
         </div>
     </section>
 </div>
