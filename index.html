@@ -7,13 +7,13 @@
 </head>
 <body>
 <div id="app">
-    <div class="bg-left"></div>
-    <div class="bg-right"></div>
+    <div class="bg-left hide-xs"></div>
+    <div class="bg-right hide-xs"></div>
     <section class="container">
         <div id="main-content">
             <h1>Your account</h1>
             <div class="boxes">
-                <div class="box-left">
+                <div class="hide-xs box-left ">
                     <div class="box-left--animate">
                     <div class="lines">
                     <svg>
@@ -42,7 +42,7 @@
                 <div class="box-right">
                     <div class="box-right--animate">
                     <h2>Take it all with you. Switch between devices,</br> and pick up. </h2 >
-                    <form action='' method='post' id='user-data'>
+                    <form action="http://api.coderslab.pl/showpost.php" method='post' id='user-data'>
                         <label class="label--style">Your name</br>
                             <input type='text' value='' name='name' id="name" required>
                         </label>
@@ -72,30 +72,33 @@
                         <fieldset class="birth-form">
                             <legend class="label--style">Date of birth</legend>
                             <label aria-label="day of birth">
-                                <input type='number' name='day' min='1' max='31' value='' id='day' required placeholder="DD">
+                                <input type='number' name='day' min='1' max='31' value='' id='day' required placeholder="Day">
                             </label>
                             <select class='month' name='month' id='month' aria-label="month of birth" required>
-                                <option value='' disabled selected></option>
+                                <option value='' disabled selected>Month</option>
                             </select>
                             <label aria-label="year of birth">
-                                <input type='number' name='year' min='1940' max='2017' value='' id='year' required placeholder="YYYY">
+                                <input type='number' name='year' min='1940' max='2017' value='' id='year' required placeholder="Year">
                             </label>
                         </fieldset>
                     </form>
                     </div>
                 </div>
                 </div>
-            <button type='submit' name='submit' form="user-data" id='submit-btn'>CONTINUE
-                <span id="btn-arrow"><svg width="50" height="50">
-                        <line x1="17" y1="25" x2="34" y2="25" style="stroke:#ffffff;"></line>
-                        <line x1="34" y1="25" x2="30" y2="21" style="stroke:#ffffff;"></line>
-                        <line x1="34" y1="25" x2="30" y2="29" style="stroke:#ffffff;"></line>
-                    </svg></span>
-            </button>
-
+                <button type='submit' name='submit' form="user-data" id='submit-btn' class="btn-animation">CONTINUE
+                    <span id="btn-arrow" class="btn-animation"><svg width="50" height="50">
+                            <line x1="17" y1="25" x2="34" y2="25" style="stroke:#ffffff;"></line>
+                            <line x1="34" y1="25" x2="30" y2="21" style="stroke:#ffffff;"></line>
+                            <line x1="34" y1="25" x2="30" y2="29" style="stroke:#ffffff;"></line>
+                        </svg></span>
+                </button>
+            <div id="form-steps" class="hide-xs">
+                <div class="step">01</div>
+                <div class="step" active>02</br>Personal</div>
+                <div class="step">03</div>
+            </div>
         </div>
-
-        </div>
+<div class="error-message"></div>
     </section>
 </div>
 <script src='dist/out.js'></script>
