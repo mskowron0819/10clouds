@@ -14,6 +14,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 input{
   border-radius: 0;
 }
+legend{
+  white-space: nowrap;
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -81,29 +84,13 @@ body {
     background: url("img/bg-left.png") no-repeat;
     width: 900px;
     height: 700px;
-    background-size: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     -webkit-animation: scale 5s;
     animation: scale 5s;
-    @-webkit-keyframes scale {
-      from {
-        background-size: 80%;
-      }
-      to {
-        background-size: 100%;
-      }
-    }
-    @keyframes scale {
-      from {
-        background-size: 80%;
-      }
-      to {
-        background-size: 100%;
-      }
-    }
+    animation-fill-mode: forwards;
   }
   .bg-right {
     background: url("img/bg-right.png") no-repeat;
@@ -113,28 +100,8 @@ body {
     bottom: 0;
     right: 0;
     z-index: -1;
-    -webkit-animation: move-left 5s;
-    animation: move-left 5s;
-    @-webkit-keyframes move-left  {
-      0% {
-        bottom: -40%;
-        right: -40%;
-      }
-      100% {
-        bottom: 0;
-        right: 0;
-      }
-    }
-    @keyframes move-left  {
-      0% {
-        bottom: -40%;
-        right: -40%;
-      }
-      100% {
-        bottom: 0;
-        right: 0;
-      }
-    }
+    -webkit-animation: move-left 3s;
+    animation: move-left 3s;
   }
 }
 .container{
@@ -151,7 +118,6 @@ body {
     -ms-flex-item-align: center;
     align-self: center;
     width: 60%;
-    position: relative;
     h1{
       color: #FFFFFF;
       font-size: 45px;
@@ -161,41 +127,35 @@ body {
     }
     .boxes {
       height: 552px;
-      min-height: 552px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       margin-bottom: 25px;
+      position: relative;
+      &:after{
+        content: '';
+        position: absolute;
+        top: -1px;
+        height: 2px;
+        width: 70px;
+        right: 45%;
+        background-color: #1BFEC0;
+      }
     }
   }
 }
 .box-left {
   overflow: hidden;
   width: 40%;
+  height: 100%;
   .box-left--animate{
     background: url("./img/box-left.png")  bottom center/cover no-repeat;
     position: relative;
     right: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     -webkit-animation: slide-right 1s;
     animation: slide-right 1s;
-    @-webkit-keyframes slide-right {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-    @keyframes slide-right {
-      from {
-        right: -100%;
-      }
-      to {
-        right: 0;
-      }
-    }
   }
   .lines{
     background-color: rgba(26, 26, 26, 0.85);
@@ -211,16 +171,6 @@ body {
         stroke-dashoffset: 400;
         -webkit-animation: slide 2s 0.5s forwards;
         animation: slide 2s 0.5s forwards;
-        @-webkit-keyframes slide {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
-        @keyframes slide {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
       }
     }
   }
@@ -238,6 +188,7 @@ body {
   overflow: hidden;
   font-size: 14px;
   width: 60%;
+  height: 100%;
   .box-right--animate{
     background-color: #fbfbfd;
     width: 100%;
@@ -246,42 +197,25 @@ body {
     position: relative;
     -webkit-animation: slide-left 1s;
     animation: slide-left 1s;
-    @-webkit-keyframes slide-left {
-      from {
-        left: -100%;
-      }
-      to {
-        left: 0;
-      }
-    }
-    @keyframes slide-left {
-      from {
-        left: -100%;
-      }
-      to {
-        left: 0;
-      }
-    }
   }
   h2{
     width: 85%;
-    padding: 50px 50px 0 50px;
-    white-space: nowrap;
+    padding: 13% 13% 0 13%;
   }
   form {
-    padding: 50px;
+    padding: 13%;
     .label--style {
       color: $grey;
       font-size: 11px;
-      padding-left: 15px;
+      padding-left: 5%;
     }
     input, select {
       border: none;
-      margin-bottom: 25px;
+      margin-bottom: 5%;
       border-bottom: 2px solid $grey;
       outline: none;
       background-color: transparent;
-      padding: 10px 0 20px 15px;
+      padding: 3% 0 5% 5%;
       font-size: 16px;
       &:focus {
         border-color: $purple;
@@ -291,7 +225,7 @@ body {
       border-radius: 0;
       -webkit-appearance: none;
       -moz-appearance: none;
-      padding: 20px 15px 20px 15px;
+      padding: 3% 3% 5% 3%;
     }
     #name{
       width: 100%;
@@ -301,7 +235,7 @@ body {
     }
     #phone{
       width: 60%;
-      margin-left: 3%;
+      float: right;
     }
     .arrow {
       position: relative;
@@ -313,8 +247,8 @@ body {
         border-right: 4px solid transparent;
         border-top: 4px solid $grey;
         position: absolute;
-        top: 300%;
-        right: -120%;
+        top: 40%;
+        right: 5px;
       }
     }
   }
@@ -326,10 +260,7 @@ form {
     position: relative;
     border: 2px solid $grey;
     display: inline-block;
-    margin: 15px 30px 25px 0;
-    &:checked {
-      border: 2px solid #1CD4A3;
-    }
+    margin: 3% 9% 5% 0;
     label {
       width: 14px;
       height: 14px;
@@ -372,45 +303,53 @@ form {
   }
 }
 form {
-  option{
-    padding-left: 20px;
-  }
-  #day, #month, #year {
-    height: 47px;
-    border: 2px solid $grey;
-    padding: 0 0 0 20px;
-    margin-top: 15px;
-  }
-  #day {
-    width: 13%;
-    text-align: center;
-    padding: 0;
-  }
-  #day,#month{
-    margin-right: 5.5%;
-  }
-  #month, #year {
-    width: 36%;
-    &:disabled{
+  #birth-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    span{
+      align-self: center;
+      transform: scale(3,1);
       color: $grey;
+    }
+    option{
+      padding-left: 20px;
+    }
+    #day, #month, #year {
+      height: 47px;
+      border: 2px solid $grey;
+      padding: 0 0 0 5%;
+      margin-bottom: 0;
+    }
+    #day {
+      width: 47px;
+      text-align: center;
+      padding: 2%;
+    }
+    #month, #year{
+      width: 33%;
     }
   }
 }
 
-#submit-btn{
+.submit-btn{
   color: #FFFFFF;
-  background: $purple;
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(157,89,235,1)), color-stop(20%, rgba(148,89,235,1)), color-stop(57%, rgba(128,72,232,1)), color-stop(71%, rgba(121,70,233,1)), color-stop(100%, rgba(111,56,231,1)));
-  background: -ms-linear-gradient(left, rgba(157,89,235,1) 0%, rgba(148,89,235,1) 20%, rgba(128,72,232,1) 57%, rgba(121,70,233,1) 71%, rgba(111,56,231,1) 100%);
+  background: rgba(168,117,235,1);
+  background: -moz-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(168,117,235,1)), color-stop(21%, rgba(148,89,235,1)), color-stop(52%, rgba(130,53,230,1)), color-stop(74%, rgba(124,53,230,1)), color-stop(100%, rgba(108,51,231,1)));
+  background: -webkit-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
+  background: -o-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
+  background: -ms-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
   position: absolute;
   right: -50px;
-  bottom: 0;
+  bottom: -25px;
   height: 50px;
-  width: 235px;
+  width: 236px;
   border: none;
   line-height: 50px;
   padding: 0;
   overflow: hidden;
+  outline: none;
   #btn-arrow{
     height: 50px;
     width: 50px;
@@ -428,6 +367,193 @@ form {
   -webkit-animation: slide-btn 1s;
   animation: slide-btn 1s;
 }
+
+#form-steps{
+  position: absolute;
+  width: 25px;
+  height: 200px;
+  right: -25px;
+  top: 30%;
+  .step{
+    height: 85px;
+    color: #555555;
+    padding: 10px;
+    font-size: 12px;
+    border-top: 2px solid #555555;
+    width: 100%;
+    display: block;
+    -webkit-animation: show 2s;
+    opacity: 0;
+    animation: show 2s 1s;
+    animation-fill-mode: forwards;
+    &:nth-child(2){
+      border-top: 2px solid $green;
+      color: #FFFFFF;
+    }
+  }
+}
+#error,#success {
+  display: none;
+}
+#error.message, #success.message {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 60%;
+  height: 50%;
+  text-align: center;
+  background-color: #FFFFFf;
+  border: 10px solid $green;
+  display: flex;
+  justify-content: center;
+  .submit-btn {
+    right: 50%;
+    transform: translateX(50%);
+    width: 40%;
+  }
+  div{
+    align-self: center;
+    p{
+      margin: 2%;
+      color: $purple;
+    }
+  }
+}
+
+// media queries
+@media screen and (max-width: 768px) {
+  #app {
+      .bg-left {
+        background: url("./img/bg-left-mobile.png") no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 550px;
+        animation: show 3s;
+      }
+      .bg-right {
+        background: url("./img/bg-right-mobile.png") no-repeat;
+        width: 318px;
+        height: 110px;
+      }
+  }
+  .hide-xs {
+    display: none;
+  }
+  .container{
+    #main-content{
+      width: 100%;
+      height: 100%;
+      h1{
+        font-size: 30px;
+        padding: 10% 0 10% 0;
+        text-align: center;
+      }
+      .boxes{
+        &:after {
+          right: 65%;
+        }
+        height: 77vh;
+        .box-right{
+          width: 100%;
+          height: 77vh;
+          .box-right--animate {
+            animation: slide-left paused;
+          }
+          h2{
+            font-size: 15px;
+            width: 100%;
+            padding: 10%;
+          }
+          form{
+            padding: 5%;
+          }
+        }
+      }
+
+    }
+    .submit-btn{
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+}
+
+// keyframes
+
+@-webkit-keyframes move-left  {
+  0% {
+    bottom: -40%;
+    right: -40%;
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+  }
+}
+@keyframes move-left  {
+  0% {
+    bottom: -40%;
+    right: -40%;
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+  }
+}
+@-webkit-keyframes slide-left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes slide-left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@-webkit-keyframes slide-right {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes slide-right {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes scale {
+  from {
+    background-size: 80%;
+  }
+  to {
+    background-size: 100%;
+  }
+}
+@keyframes scale {
+  from {
+    background-size: 80%;
+  }
+  to {
+    background-size: 100%;
+  }
+}
+
 @-webkit-keyframes slide-btn {
   from {
     height: 0;
@@ -444,64 +570,31 @@ form {
     height: 50px;
   }
 }
-#form-steps{
-  position: absolute;
-  width: 25px;
-  height: 200px;
-  right: -25px;
-  top: 210px;
-  .step{
-    height: 85px;
-    color: #555555;
-    padding: 10px;
-    font-size: 12px;
-    border-top: 2px solid #555555;
-    width: 100%;
-    display: block;
-    -webkit-animation: show 2s;
-    opacity: 0;
-    animation: show 2s 1s;
-    animation-fill-mode: forwards;
-    @-webkit-keyframes show {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-    @keyframes show {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+//lines box-left
+@-webkit-keyframes slide {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes slide {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-@media screen and (max-width: 768px) {
-    .hide-xs {
-      display: none;
-    }
-  .container{
-    #main-content{
-      width: 100%;
-      height: 100%;
-      h1{
-        font-size: 30px;
-        padding: 0 0 10px 0;
-        text-align: center;
-      }
-      .box-right{
-        width: 100%;
-        height: 90vh;
-      }
-    }
-    #submit-btn{
-      right: 50%;
-      bottom: 3vh;
-    }
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

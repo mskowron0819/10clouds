@@ -7,54 +7,54 @@
 </head>
 <body>
 <div id="app">
-    <div class="bg-left hide-xs"></div>
-    <div class="bg-right hide-xs"></div>
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
     <section class="container">
         <div id="main-content">
             <h1>Your account</h1>
             <div class="boxes">
-                <div class="hide-xs box-left ">
+                <div class="box-left hide-xs ">
                     <div class="box-left--animate">
-                    <div class="lines">
-                    <svg>
-                        <line x1="5%" y1="12%" x2="27%" y2="12%" class="green"></line>
-                        <line x1="5%" y1="16%" x2="52%" y2="16%" class="purple"></line>
-                        <line x1="15%" y1="20%" x2="45%" y2="20%" class="white"></line>
-                        <line x1="15%" y1="24%" x2="41%" y2="24%" class="green"></line>
-                        <line x1="5%" y1="28%" x2="55%" y2="28%" class="white"></line>
-                        <line x1="25%" y1="32%" x2="86%" y2="32%" class="green"></line>
-                        <line x1="25%" y1="36%" x2="83%" y2="36%" class="purple"></line>
-                        <line x1="15%" y1="40%" x2="45%" y2="40%" class="white"></line>
-                        <line x1="25%" y1="44%" x2="70%" y2="44%" class="purple"></line>
-                        <line x1="5%" y1="48%" x2="80%" y2="48%" class="white"></line>
-                        <line x1="15%" y1=52% x2="65%" y2="52%" class="green"></line>
-                        <line x1="25%" y1="56%" x2="55%" y2="56%" class="purple"></line>
-                        <line x1="25%" y1="60%" x2="74%" y2="60%" class="white"></line>
-                        <line x1="15%" y1="64%" x2="79%" y2="64%" class="green"></line>
-                        <line x1="25%" y1="68%" x2="30%" y2="68%" class="purple"></line>
-                        <line x1="25%" y1="72%" x2="55%" y2="72%" class="white"></line>
-                        <line x1="35%" y1="76%" x2="81%" y2="76%" class="green"></line>
-                        <line x1="35%" y1="80%" x2="90%" y2="80%" class="purple"></line>
-                    </svg>
-                    </div>
-                    </div>
+                        <div class="lines">
+                        <svg>
+                            <line x1="5%" y1="12%" x2="27%" y2="12%" class="green"></line>
+                            <line x1="5%" y1="16%" x2="52%" y2="16%" class="purple"></line>
+                            <line x1="15%" y1="20%" x2="45%" y2="20%" class="white"></line>
+                            <line x1="15%" y1="24%" x2="41%" y2="24%" class="green"></line>
+                            <line x1="5%" y1="28%" x2="55%" y2="28%" class="white"></line>
+                            <line x1="25%" y1="32%" x2="86%" y2="32%" class="green"></line>
+                            <line x1="25%" y1="36%" x2="83%" y2="36%" class="purple"></line>
+                            <line x1="15%" y1="40%" x2="45%" y2="40%" class="white"></line>
+                            <line x1="25%" y1="44%" x2="70%" y2="44%" class="purple"></line>
+                            <line x1="5%" y1="48%" x2="80%" y2="48%" class="white"></line>
+                            <line x1="15%" y1=52% x2="65%" y2="52%" class="green"></line>
+                            <line x1="25%" y1="56%" x2="55%" y2="56%" class="purple"></line>
+                            <line x1="25%" y1="60%" x2="74%" y2="60%" class="white"></line>
+                            <line x1="15%" y1="64%" x2="79%" y2="64%" class="green"></line>
+                            <line x1="25%" y1="68%" x2="30%" y2="68%" class="purple"></line>
+                            <line x1="25%" y1="72%" x2="55%" y2="72%" class="white"></line>
+                            <line x1="35%" y1="76%" x2="81%" y2="76%" class="green"></line>
+                            <line x1="35%" y1="80%" x2="90%" y2="80%" class="purple"></line>
+                        </svg>
+                        </div>
+                        </div>
                 </div>
                 <div class="box-right">
                     <div class="box-right--animate">
-                    <h2>Take it all with you. Switch between devices,</br> and pick up. </h2 >
-                    <form action="http://api.coderslab.pl/showpost.php" method='post' id='user-data'>
+                    <h2>Take it all with you. Switch between devices, and pick up. </h2 >
+                    <form action="#" method='post' id='user-data' name="dataForm">
                         <label class="label--style">Your name</br>
                             <input type='text' value='' name='name' id="name" required>
                         </label>
                         <fieldset>
-                            <legend class="label--style arrow">Mobile</legend>
+                            <legend class="label--style">Mobile</legend>
                             <select name='code' aria-label="country code" id="code">
                                 <option value='48'>+48 (PL)</option>
-                                <option value='49'>+49 (GB)</option>
-                                <option value='31'>+31 (FR)</option>
-                                <option value='31'>+31 (IT)</option>
+                                <option value='44'>+44 (GB)</option>
+                                <option value='33'>+33 (FR)</option>
+                                <option value='39'>+39 (IT)</option>
                             </select>
-                            <label aria-label="telephone number">
+                            <label aria-label="telephone number" class="arrow">
                                 <input type='tel' id='phone' name='mobile' class='mobile' value='' minlength='9' maxlength='11' required placeholder="123 456 789">
                             </label>
                         </fieldset>
@@ -65,40 +65,52 @@
                                 <label for="male" aria-label="Male"></label>
                             </div>
                             <div class="radioBtn female">
-                                <input type="radio" value="female" id="female" name="gender"/>
+                                <input type="radio" value="female" id="female" name="gender" />
                                 <label for="female" aria-label="Female"></label>
                             </div>
                         </fieldset>
-                        <fieldset class="birth-form">
+                        <fieldset class="birth-form" >
                             <legend class="label--style">Date of birth</legend>
-                            <label aria-label="day of birth">
-                                <input type='number' name='day' min='1' max='31' value='' id='day' required placeholder="Day">
-                            </label>
-                            <select class='month' name='month' id='month' aria-label="month of birth" required>
-                                <option value='' disabled selected>Month</option>
-                            </select>
-                            <label aria-label="year of birth">
-                                <input type='number' name='year' min='1940' max='2017' value='' id='year' required placeholder="Year">
-                            </label>
+                            <div id="birth-info">
+                                <select id='day' aria-label="day of birth" required>
+                                    <option value='' disabled selected>Day</option>
+                                </select>
+                                <span>-</span>
+                                <select id='month' aria-label="month of birth" required>
+                                    <option value='' disabled selected>Month</option>
+                                </select>
+                                <span>-</span>
+                                <select id='year' aria-label="year of birth" required>
+                                    <option value='' disabled selected>Year</option>
+                                </select>
+                            </div>
                         </fieldset>
                     </form>
                     </div>
                 </div>
-                </div>
-                <button type='submit' name='submit' form="user-data" id='submit-btn' class="btn-animation">CONTINUE
+                <button type='submit' name='submit' form="user-data" class="submit-btn btn-animation">CONTINUE
                     <span id="btn-arrow" class="btn-animation"><svg width="50" height="50">
                             <line x1="17" y1="25" x2="34" y2="25" style="stroke:#ffffff;"></line>
                             <line x1="34" y1="25" x2="30" y2="21" style="stroke:#ffffff;"></line>
                             <line x1="34" y1="25" x2="30" y2="29" style="stroke:#ffffff;"></line>
                         </svg></span>
                 </button>
-            <div id="form-steps" class="hide-xs">
-                <div class="step">01</div>
-                <div class="step" active>02</br>Personal</div>
-                <div class="step">03</div>
+                <div id="form-steps" class="hide-xs">
+                    <div class="step">01</div>
+                    <div class="step" active>02</br>Personal</div>
+                    <div class="step">03</div>
+                </div>
             </div>
         </div>
-<div class="error-message"></div>
+        <div id="error">
+            <div></div>
+            <button class="submit-btn">OK</button>
+        </div>
+        <div id="success">
+            <div></div>
+            <a href="https://www.maxim.com/.image/t_share/MTQyMTIwMzgwMDQ2MjU1MTE1/d0vjkdpgif.gif"><button class="submit-btn">OK</button>
+            </a>
+        </div>
     </section>
 </div>
 <script src='dist/out.js'></script>
