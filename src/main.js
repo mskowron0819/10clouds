@@ -71,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
             allErrors.push("Your phone number must contain at least 9 characters.");
             formValidation = false;
         }
+        if(phone.value.length > 11){
+            allErrors.push("Your phone number cannot be longer than 11 characters.");
+            formValidation = false;
+        }
         // gender validation
         let check = false;
         for(let i=0; i<gender.length; i++){
