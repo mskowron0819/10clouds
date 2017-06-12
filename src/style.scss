@@ -90,6 +90,7 @@ body {
     z-index: -1;
     -webkit-animation: scale 5s;
     animation: scale 5s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .bg-right {
@@ -304,11 +305,17 @@ form {
 }
 form {
   #birth-info{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin-top: 3%;
     span{
+      -ms-flex-item-align: center;
       align-self: center;
+      -webkit-transform: scale(3,1);
       transform: scale(3,1);
       color: $grey;
     }
@@ -335,10 +342,7 @@ form {
 .submit-btn{
   color: #FFFFFF;
   background: rgba(168,117,235,1);
-  background: -moz-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(168,117,235,1)), color-stop(21%, rgba(148,89,235,1)), color-stop(52%, rgba(130,53,230,1)), color-stop(74%, rgba(124,53,230,1)), color-stop(100%, rgba(108,51,231,1)));
-  background: -webkit-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
-  background: -o-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
   background: -ms-linear-gradient(left, rgba(168,117,235,1) 0%, rgba(148,89,235,1) 21%, rgba(130,53,230,1) 52%, rgba(124,53,230,1) 74%, rgba(108,51,231,1) 100%);
   position: absolute;
   right: -50px;
@@ -384,7 +388,9 @@ form {
     display: block;
     -webkit-animation: show 2s;
     opacity: 0;
+    -webkit-animation: show 2s 1s;
     animation: show 2s 1s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     &:nth-child(2){
       border-top: 2px solid $green;
@@ -408,14 +414,20 @@ form {
   text-align: center;
   background-color: #FFFFFf;
   border: 10px solid $green;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   .submit-btn {
     right: 50%;
+    -webkit-transform: translateX(50%);
     transform: translateX(50%);
     width: 40%;
   }
   div{
+    -ms-flex-item-align: center;
     align-self: center;
     p{
       margin: 2%;
@@ -427,18 +439,19 @@ form {
 // media queries
 @media screen and (max-width: 768px) {
   #app {
-      .bg-left {
-        background: url("./img/bg-left-mobile.png") no-repeat;
-        background-size: 100%;
-        width: 100%;
-        height: 550px;
-        animation: show 3s;
-      }
-      .bg-right {
-        background: url("./img/bg-right-mobile.png") no-repeat;
-        width: 318px;
-        height: 110px;
-      }
+    .bg-left {
+      background: url("./img/bg-left-mobile.png") no-repeat;
+      background-size: 100%;
+      width: 100%;
+      height: 550px;
+      -webkit-animation: show 3s;
+      animation: show 3s;
+    }
+    .bg-right {
+      background: url("./img/bg-right-mobile.png") no-repeat;
+      width: 318px;
+      height: 110px;
+    }
   }
   .hide-xs {
     display: none;
@@ -461,6 +474,7 @@ form {
           width: 100%;
           height: 77vh;
           .box-right--animate {
+            -webkit-animation: slide-left paused;
             animation: slide-left paused;
           }
           h2{
@@ -477,6 +491,7 @@ form {
     }
     .submit-btn{
       right: 50%;
+      -webkit-transform: translateX(50%);
       transform: translateX(50%);
     }
   }
@@ -484,6 +499,16 @@ form {
 
 // keyframes
 
+@-webkit-keyframes move-left  {
+  0% {
+    bottom: -40%;
+    right: -40%;
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+  }
+}
 @-webkit-keyframes move-left  {
   0% {
     bottom: -40%;
@@ -571,6 +596,11 @@ form {
   }
 }
 //lines box-left
+@-webkit-keyframes slide {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 @-webkit-keyframes slide {
   to {
     stroke-dashoffset: 0;
